@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML canvas tag</title>
+<style>
+canvas {     <!-- default/alapbeállítások -->
+  height: 150px;
+  width: 300px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>The canvas element</h1>
+
+<canvas id="myCanvas">Your browser does not support the HTML5 canvas tag.</canvas>
+<p>Canvas 2</p>
+<canvas id="myCanvas2" width="200" height="100" style="border:1px solid #d3d3d3;">Your browser does not support the HTML5 canvas tag.</canvas>
+<p>Canvas 3</p>
+<canvas id="myCanvas3">Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var a = document.getElementById("myCanvas");
+var ctx = a.getContext("2d");
+
+// Create gradient
+var grd = ctx.createLinearGradient(0, 0, 200, 0);
+grd.addColorStop(0, "red");
+grd.addColorStop(1, "white");
+
+// Fill with gradient
+ctx.fillStyle = grd;
+ctx.fillRect(10, 10, 150, 80);
+
+var b = document.getElementById("myCanvas2");
+var ctx = b.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+var c = document.getElementById("myCanvas3");
+var ctx = c.getContext("2d");
+ctx.font = "30px Arial";
+ctx.strokeText("Hello World", 10, 50);
+ctx.stroke();
+</script> 
+
+
+</body>
+</html>

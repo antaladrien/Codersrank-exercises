@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fieldset</title>
+<style>
+<!-- default/alapbeállítások -->
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
+</style>
+</head>
+
+<body>
+
+<h1>The fieldset element</h1>
+
+<form action="/action_page.php">
+ <fieldset>
+  <legend>Personalia:</legend>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email"><br><br>
+  <label for="birthday">Birthday:</label>
+  <input type="date" id="birthday" name="birthday"><br><br>
+  <input type="submit" value="Submit">
+ </fieldset>
+</form>
+
+<h1>The fieldset disabled attribute</h1>
+
+<form>
+<form action="/action_page.php">
+  <fieldset disabled>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+</form>
+
+<h1>The fieldset form attribute</h1>
+
+<form action="/action_page.php" method="get" id="form1">
+  <label for="favcolor">What is your favorite color?</label>
+  <input type="text" id="favcolor" name="favcolor">
+  <input type="submit">
+</form>
+
+<p>The fieldset below is outside the form, but still a part of the form.</p>
+
+<fieldset form="form1">
+  <legend>Personalia:</legend>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname" form="form1"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname" form="form1">
+</fieldset>
+
+<h1>The fieldset name attribute</h1>
+
+<form action="/action_page.php" method="get">
+<fieldset name="personalia">
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname">
+</fieldset>
+<br>
+<button type="button" onclick="form.personalia.style.backgroundColor='yellow'">Change background color of fieldset</button>
+<input type="submit">
+</form>
+
+</body>
+</html>
